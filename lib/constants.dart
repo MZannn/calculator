@@ -1,136 +1,172 @@
 import 'package:flutter/material.dart';
 
-List widget = [
-  Text(
-    "AC",
-    style: TextStyle(
-      fontSize: 20,
+List widgetButton = [
+  {
+    "text": "AC",
+    "widget": const Text(
+      "AC",
+      style: TextStyle(
+        fontSize: 20,
+      ),
     ),
-  ),
-  Icon(
-    Icons.backspace,
-  ),
-  Text(
-    "%",
-    style: TextStyle(
-      fontSize: 20,
+  },
+  {
+    "text": "C",
+    "widget": const Text(
+      "C",
+      style: TextStyle(
+        fontSize: 20,
+      ),
     ),
-  ),
-  Text(
-    "/",
-    style: TextStyle(
-      fontSize: 20,
+  },
+  {
+    "text": "backspace",
+    "widget": const Icon(
+      Icons.backspace,
     ),
-  ),
-  Text(
-    "7",
-    style: TextStyle(
-      fontSize: 20,
+  },
+  {
+    "text": "/",
+    "widget": const Text(
+      "/",
+      style: TextStyle(
+        fontSize: 20,
+      ),
     ),
-  ),
-  Text(
-    "8",
-    style: TextStyle(
-      fontSize: 20,
+  },
+  {
+    "text": "7",
+    "widget": const Text(
+      "7",
+      style: TextStyle(
+        fontSize: 20,
+      ),
     ),
-  ),
-  Text(
-    "9",
-    style: TextStyle(
-      fontSize: 20,
+  },
+  {
+    "text": "8",
+    "widget": const Text(
+      "8",
+      style: TextStyle(
+        fontSize: 20,
+      ),
     ),
-  ),
-  Icon(
-    Icons.close,
-  ),
-  Text(
-    "4",
-    style: TextStyle(
-      fontSize: 20,
+  },
+  {
+    "text": "9",
+    "widget": const Text(
+      "9",
+      style: TextStyle(
+        fontSize: 20,
+      ),
     ),
-  ),
-  Text(
-    "5",
-    style: TextStyle(
-      fontSize: 20,
+  },
+  {
+    "text": "x",
+    "widget": const Icon(
+      Icons.close,
     ),
-  ),
-  Text(
-    "6",
-    style: TextStyle(
-      fontSize: 20,
+  },
+  {
+    "text": "4",
+    "widget": const Text(
+      "4",
+      style: TextStyle(
+        fontSize: 20,
+      ),
     ),
-  ),
-  Icon(
-    Icons.remove,
-  ),
-  Text(
-    "1",
-    style: TextStyle(
-      fontSize: 20,
+  },
+  {
+    "text": "5",
+    "widget": const Text(
+      "5",
+      style: TextStyle(
+        fontSize: 20,
+      ),
     ),
-  ),
-  Text(
-    "2",
-    style: TextStyle(
-      fontSize: 20,
+  },
+  {
+    "text": "6",
+    "widget": const Text(
+      "6",
+      style: TextStyle(
+        fontSize: 20,
+      ),
     ),
-  ),
-  Text(
-    "3",
-    style: TextStyle(
-      fontSize: 20,
+  },
+  {
+    "text": "-",
+    "widget": const Icon(
+      Icons.remove,
     ),
-  ),
-  Icon(
-    Icons.add,
-  ),
-  Text(
-    "00",
-    style: TextStyle(
-      fontSize: 20,
+  },
+  {
+    "text": "1",
+    "widget": const Text(
+      "1",
+      style: TextStyle(
+        fontSize: 20,
+      ),
     ),
-  ),
-  Text(
-    "0",
-    style: TextStyle(
-      fontSize: 20,
+  },
+  {
+    "text": "2",
+    "widget": const Text(
+      "2",
+      style: TextStyle(
+        fontSize: 20,
+      ),
     ),
-  ),
-  Text(
-    ".",
-    style: TextStyle(
-      fontSize: 20,
+  },
+  {
+    "text": "3",
+    "widget": const Text(
+      "3",
+      style: TextStyle(
+        fontSize: 20,
+      ),
     ),
-  ),
-  Text(
-    "=",
-    style: TextStyle(
-      fontSize: 20,
-      color: Colors.white,
+  },
+  {
+    "text": "+",
+    "widget": const Icon(
+      Icons.add,
     ),
-  ),
-];
-
-List data = [
-  "AC",
-  "backspace",
-  "%",
-  "/",
-  "7",
-  "8",
-  "9",
-  "x",
-  "4",
-  "5",
-  "6",
-  "-",
-  "1",
-  "2",
-  "3",
-  "+",
-  "00",
-  "0",
-  ".",
-  "=",
+  },
+  {
+    "text": "00",
+    "widget": const Text(
+      "00",
+      style: TextStyle(
+        fontSize: 20,
+      ),
+    ),
+  },
+  {
+    "text": "0",
+    "widget": const Text(
+      "0",
+      style: TextStyle(
+        fontSize: 20,
+      ),
+    ),
+  },
+  {
+    "text": ".",
+    "widget": const Text(
+      ".",
+      style: TextStyle(
+        fontSize: 20,
+      ),
+    ),
+  },
+  {
+    "text": "=",
+    "widget": const Text(
+      "=",
+      style: TextStyle(
+        fontSize: 20,
+      ),
+    ),
+  },
 ];

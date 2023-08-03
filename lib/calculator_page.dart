@@ -3,17 +3,10 @@ import 'package:calculator/constants.dart';
 import 'package:flutter/material.dart';
 
 class CalculatorPage extends StatelessWidget {
-  const CalculatorPage({super.key});
+  const CalculatorPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    num number1 = 0;
-    num number2 = 0;
-    String result;
-    String operator;
-    String textToDisplay = '';
-    String history = '';
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -27,25 +20,45 @@ class CalculatorPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          BlocBuilder<CalculatorCubit, CalculatorState>(
-            builder: (context, state) {
-              if (state is CalculatorLoaded) {
-                textToDisplay = state.textToDisplay!;
-                return Expanded(
-                  child: Container(
-                    alignment: Alignment.bottomRight,
-                    padding: const EdgeInsets.all(20),
-                    child: Text(
-                      textToDisplay,
-                      style: const TextStyle(
-                        fontSize: 50,
-                      ),
-                    ),
-                  ),
-                );
-              }
-              return const SizedBox();
-            },
+          Expanded(
+            child: Container(
+              alignment: Alignment.bottomRight,
+              child: BlocBuilder<CalculatorCubit, CalculatorState>(
+                builder: (context, state) {
+                  if (state is CalculatorLoaded) {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const SizedBox(height: 20),
+                        Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Text(
+                            state.textToDisplay!,
+                            style: const TextStyle(
+                              fontSize: 50,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Text(
+                            state.history != ''
+                                ? '${state.history} = ${state.result}'
+                                : state.result!,
+                            style: const TextStyle(
+                              fontSize: 35,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  }
+                  return const SizedBox();
+                },
+              ),
+            ),
           ),
           Column(
             children: [
@@ -60,14 +73,14 @@ class CalculatorPage extends StatelessWidget {
                     mainAxisSpacing: 4,
                     crossAxisSpacing: 4,
                   ),
-                  itemCount: widget.length,
+                  itemCount: widgetButton.length,
                   itemBuilder: (context, index) {
-                    if (widget[index] == widget.last) {
+                    if (widgetButton[index]['text'] == "=") {
                       return TextButton(
                         onPressed: () {
-                          context.read<CalculatorCubit>().btnOnClick(
-                                data.last,
-                              );
+                          context
+                              .read<CalculatorCubit>()
+                              .btnOnClick(widgetButton[index]['text']);
                         },
                         style: TextButton.styleFrom(
                           shape: const CircleBorder(),
@@ -75,7 +88,7 @@ class CalculatorPage extends StatelessWidget {
                           foregroundColor: Colors.black,
                           enableFeedback: true,
                         ),
-                        child: widget[index],
+                        child: widgetButton[index]['widget'],
                       );
                     } else {
                       return TextButton(
@@ -83,11 +96,11 @@ class CalculatorPage extends StatelessWidget {
                           shape: const CircleBorder(),
                         ),
                         onPressed: () {
-                          context.read<CalculatorCubit>().btnOnClick(
-                                textToDisplay + data[index],
-                              );
+                          context
+                              .read<CalculatorCubit>()
+                              .btnOnClick(widgetButton[index]['text']);
                         },
-                        child: widget[index],
+                        child: widgetButton[index]['widget'],
                       );
                     }
                   },
