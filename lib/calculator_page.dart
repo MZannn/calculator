@@ -85,7 +85,7 @@ class CalculatorPage extends StatelessWidget {
                         style: TextButton.styleFrom(
                           shape: const CircleBorder(),
                           backgroundColor: Colors.orange,
-                          foregroundColor: Colors.black,
+                          foregroundColor: Colors.white,
                           enableFeedback: true,
                         ),
                         child: widgetButton[index]['widget'],
